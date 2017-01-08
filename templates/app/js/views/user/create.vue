@@ -22,12 +22,8 @@ export default {
     ]),
     async onCreate() {
       if (this.name) {
-        let users = this.$store.state.users;
-        // mock data
-        let userId = users[users.length - 1].id + 1;
         // add
         await this.addUser({
-          id: userId,
           name: this.name
         });
         // clear

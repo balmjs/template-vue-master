@@ -20,6 +20,7 @@ export default {
   },
   methods: {
     ...mapActions([
+      'getUser',
       'editUser'
     ]),
     async onUpdate() {
@@ -35,9 +36,10 @@ export default {
   },
   async created() {
     let userId = this.$route.params.id;
-    await this.$store.dispatch('getUser', userId);
+    await this.getUser(userId);
 
-    if (!this.$store.state.currentUser) {
+    if (!this.user.id) {
+      console.warn('no user data');
       this.$router.push('/user/list');
     }
   }

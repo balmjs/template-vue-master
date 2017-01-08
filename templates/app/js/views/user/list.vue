@@ -1,6 +1,6 @@
 <template>
   <div class="user-list">
-    <h3>User list</h3>
+    <h2>User list</h2>
     <p>
       <router-link to="/user/create">Add new user</router-link>
     </p>
@@ -33,11 +33,12 @@ import {mapGetters, mapActions} from 'vuex';
 export default {
   computed: {
     ...mapGetters({
-      users: 'allUsers'
+      users: 'getAllUsers'
     })
   },
   methods: {
     ...mapActions([
+      'getAllUsers',
       'deleteUser'
     ]),
     async onDelete(user) {
@@ -46,9 +47,9 @@ export default {
       }
     }
   },
-  async created() {
-    if (!this.$store.state.users.length) {
-      await this.$store.dispatch('getAllUsers');
+  created() {
+    if (!this.users.length) {
+      this.getAllUsers();
     }
   }
 };

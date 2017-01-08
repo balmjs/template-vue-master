@@ -21,9 +21,14 @@ export default {
       menus: 'getMenu'
     })
   },
-  async created() {
-    if (!this.$store.state.menus.length) {
-      await this.$store.dispatch('getMenu');
+  methods: {
+    ...mapActions([
+      'getMenu'
+    ])
+  },
+  created() {
+    if (!this.menus.length) {
+      this.getMenu();
     }
   }
 };

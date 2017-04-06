@@ -1,7 +1,7 @@
-const UserIndex = r => require.ensure([], () => r(require('../views/user/index')), '/user');
-const UserList = r => require.ensure([], () => r(require('../views/user/list')), '/user');
-const UserCreate = r => require.ensure([], () => r(require('../views/user/create')), '/user');
-const UserDetail = r => require.ensure([], () => r(require('../views/user/detail')), '/user');
+const UserIndex = resolve => require(['../views/user/index'], resolve);
+const UserList = resolve => require(['../views/user/list'], resolve);
+const UserCreate = resolve => require(['../views/user/create'], resolve);
+const UserDetail = resolve => require(['../views/user/detail'], resolve);
 
 let userRoutes = [{
   path: '/user',

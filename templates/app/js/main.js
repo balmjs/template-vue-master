@@ -6,6 +6,7 @@ import App from './app';
 import routes from './routers';
 import store from './store';
 
+Vue.config.productionTip = false;
 Vue.use(VueRouter);
 Vue.use(Vuex);
 Vue.prototype.$http = axios;
@@ -16,8 +17,8 @@ const router = new VueRouter({
 
 new Vue({
   el: '#app',
+  router,
   template: '<App/>',
   components: { App },
-  router,
   store: new Vuex.Store(store)
 });

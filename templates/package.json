@@ -1,5 +1,5 @@
 {
-  "name": "my-project",
+  "name": "my-vue-project",
   "version": "1.0.0",
   "description": "A Vue.js project with router & vuex",
   "private": true,
@@ -9,16 +9,17 @@
   },
   "dependencies": {
     "axios": "^0.16.0",
-    "vue": "^2.1.0",
-    "vue-router": "^2.1.0",
-    "vuex": "^2.1.0"
+    "vue": "^2.2.2",
+    "vue-router": "^2.2.0",
+    "vuex": "^2.2.0"
   },
   "devDependencies": {
-    "babel-plugin-transform-runtime": "^6.0.0",
-    "babel-preset-stage-2": "^6.0.0",
+    "babel-plugin-transform-runtime": "^6.22.0",
+    "babel-preset-env": "^1.2.1",
+    "babel-preset-stage-2": "^6.22.0",
     "balm": "^0.6.0-beta.5",
     "gulp": "^3.9.1",
-    "vue-loader": "^11.0.0",
-    "vue-template-compiler": "^2.1.0"
+    "vue-loader": "^11.1.4",
+    "vue-template-compiler": "^2.2.4"
   }
 }

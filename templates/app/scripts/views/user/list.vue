@@ -1,5 +1,5 @@
 <template>
-  <div class="user-list">
+  <div class="page user user-list">
     <h2>User list</h2>
     <p>
       <router-link to="/user/create">Add new user</router-link>

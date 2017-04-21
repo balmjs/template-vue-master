@@ -7,7 +7,7 @@ module.exports = {
   },
   entry: {
     vue: ['vue', 'vue-router', 'vuex', 'axios'],
-    main: './app/js/main.js' // entry js file
+    main: './app/scripts/main.js' // entry js file
   },
   vendors: ['vue'],
   assets: {

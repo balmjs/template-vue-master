@@ -1,5 +1,5 @@
 <template>
-  <div class="user-create">
+  <div class="page user user-create">
     <h3>Create a new user</h3>
     <p>
       <input type="text" v-model.trim="name" @keyup.enter="onCreate">

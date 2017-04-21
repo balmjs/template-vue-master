@@ -2,7 +2,7 @@ import Vue from 'vue';
 import VueRouter from 'vue-router';
 import Vuex from 'vuex';
 import axios from 'axios';
-import App from './app';
+import App from './views/layouts/app';
 import routes from './routers';
 import store from './store';
 

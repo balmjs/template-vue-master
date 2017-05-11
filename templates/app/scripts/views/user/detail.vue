@@ -38,7 +38,7 @@ export default {
     let userId = this.$route.params.id;
     await this.getUser(userId);
 
-    if (!this.user.id) {
+    if (!this.user) {
       console.warn('no user data');
       this.$router.push('/user/list');
     }

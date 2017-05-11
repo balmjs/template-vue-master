@@ -4,7 +4,7 @@ import api from '../../config/api';
 
 const state = {
   users: [],
-  currentUser: {}
+  currentUser: null
 };
 
 const getters = {

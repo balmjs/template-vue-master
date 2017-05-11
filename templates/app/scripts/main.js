@@ -12,6 +12,7 @@ Vue.use(Vuex);
 Vue.prototype.$http = axios;
 
 const router = new VueRouter({
+  mode: 'history',
   routes
 });
 

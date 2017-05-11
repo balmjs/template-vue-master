@@ -4,7 +4,8 @@ var config = require('./balmrc');
 balm.config = {
   server: {
     open: true,
-    proxyTable: config.proxyTable
+    proxyTable: config.proxyTable,
+    historyApiFallback: true
   },
   roots: {
     source: 'app'
@@ -18,7 +19,11 @@ balm.config = {
   },
   styles: {
     ext: 'scss',
-    autoprefixer: ['last 2 versions']
+    autoprefixer: [
+      '> 1%',
+      'last 2 versions',
+      'not ie <= 8'
+    ]
   },
   scripts: {
     entry: config.entry,
@@ -42,7 +47,7 @@ balm.go(function(mix) {
 
     // for static
     mix.publish();
-    // for html
+    // for template
     Object.keys(config.publish).forEach(function(key) {
       mix.publish(key, config.publish[key].target, config.publish[key].option || {});
     });

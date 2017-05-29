@@ -5,7 +5,7 @@ balm.config = {
   server: {
     open: true,
     proxyTable: config.proxyTable,
-    historyApiFallback: true
+    historyApiFallback: true // for vue-router `mode: 'history'`
   },
   roots: {
     source: 'app'

@@ -9,10 +9,10 @@ module.exports = {
     vue: ['vue', 'vue-router', 'vuex', 'axios'],
     main: './app/scripts/main.js' // entry js file
   },
-  vendors: ['vue'],
   assets: {
     root: 'assets', // replace 'assets' to your remote project root
-    publicPath: 'public'
+    publicPath: 'public',
+    subDir: 'web'
   },
   publish: {
     'index.html': {

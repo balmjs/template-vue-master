@@ -5,7 +5,7 @@ balm.config = {
   server: {
     open: true,
     proxyTable: config.proxyTable,
-    historyApiFallback: true // for vue-router `mode: 'history'`
+    // historyApiFallback: true // for vue-router `mode: 'history'`
   },
   roots: {
     source: 'app'
@@ -28,17 +28,18 @@ balm.config = {
   scripts: {
     entry: config.entry,
     publicPath: '/',
-    vendors: config.vendors,
     loaders: [{
       test: /\.vue$/,
       loader: 'vue'
     }],
     alias: {
-      'vue': balm.config.production ? 'vue/dist/vue.min.js' : 'vue/dist/vue.js'
+      vue: balm.config.production ? 'vue/dist/vue.min.js' : 'vue/dist/vue.js'
     }
   },
   cache: true,
   assets: config.assets
+  // More Config
+  // https://github.com/balmjs/balm/blob/master/docs/configuration.md
 };
 
 balm.go(function(mix) {

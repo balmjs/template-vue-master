@@ -8,6 +8,7 @@ const actions = {
 
     let response = await axios.get(api.global.getMenu);
     let menus = response.data;
+
     commit(types.MENUS, { menus });
   }
 };

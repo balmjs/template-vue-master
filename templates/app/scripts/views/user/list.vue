@@ -1,10 +1,10 @@
 <template>
-  <div class="page user user-list">
+  <div class="page--user user-list">
     <h2>User list</h2>
     <p>
       <router-link to="/user/create">Add new user</router-link>
     </p>
-    <table v-if="users.length">
+    <table v-if="users.length" class="userdata">
       <thead>
         <tr>
           <th>ID</th>
@@ -17,7 +17,7 @@
           <td>{{ user.id }}</td>
           <td>{{ user.name }}</td>
           <td>
-            <router-link class="fa fa-edit" :to="`/user/detail/${user.id}`">Detail</router-link>
+            <router-link class="fa fa-edit" :to="`/user/${user.id}/edit`">Edit</router-link>
             <i class="fa fa-remove" @click="onDelete(user)">Delete</i>
           </td>
         </tr>

@@ -1,5 +1,5 @@
 # BalmJS template - vue-master
-> A Vue project with router & vuex
+> A Vue project with router & Vuex
 
 ## Installation
 

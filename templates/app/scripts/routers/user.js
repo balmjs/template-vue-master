@@ -16,8 +16,8 @@ let userRoutes = [{
     name: 'user.create',
     component: UserCreate
   }, {
-    path: 'detail/:id',
-    name: 'user.detail',
+    path: ':id/edit',
+    name: 'user.edit',
     component: UserDetail
   }]
 }];

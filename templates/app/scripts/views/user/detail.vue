@@ -1,5 +1,5 @@
 <template>
-  <div class="page user user-detail">
+  <div class="page--user user-detail">
     <h3>User Detail</h3>
     <div v-if="user">
       <p>ID：{{ user.id }}</p>

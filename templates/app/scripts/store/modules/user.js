@@ -32,6 +32,7 @@ const actions = {
     commit(types.ALL_USERS, { users });
   },
   addUser({ commit }, user) {
+    user = Object.assign({}, user);
     console.info('add user', user);
 
     commit(types.ADD_USER, { user });
@@ -59,7 +60,9 @@ const mutations = {
   },
   [types.ADD_USER](state, { user }) {
     // mock data
-    user.id = state.users[state.users.length - 1].id + 1;
+    user.id = state.users.length
+      ? state.users[state.users.length - 1].id + 1
+      : 1;
 
     state.users.push(user);
   },

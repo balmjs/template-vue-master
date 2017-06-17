@@ -1,5 +1,5 @@
 <template>
-  <div class="page--user user-index">
+  <div class="user-container">
     <router-view></router-view>
   </div>
 </template>

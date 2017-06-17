@@ -39,11 +39,11 @@ export default {
   methods: {
     ...mapActions([
       'getAllUsers',
-      'deleteUser'
+      'removeUser'
     ]),
     async onDelete(user) {
       if (confirm(`Are your sure to delete ${user.name}`)) {
-        await this.deleteUser(user);
+        await this.removeUser(user.id);
       }
     }
   },

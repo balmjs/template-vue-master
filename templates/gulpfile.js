@@ -5,7 +5,7 @@ balm.config = {
   server: {
     open: true,
     proxyTable: config.proxyTable,
-    // historyApiFallback: true // for vue-router `mode: 'history'`
+    // historyApiFallback: true // For vue-router `mode: 'history'`
   },
   roots: {
     source: 'app'
@@ -44,12 +44,12 @@ balm.config = {
 
 balm.go(function(mix) {
   if (balm.config.production) {
-    // for test
+    // For test data
     mix.copy('./app/data/*', './dist/data');
 
-    // for static
+    // Publish assets
     mix.publish();
-    // for template
+    // Publish templates
     Object.keys(config.publish).forEach(function(key) {
       mix.publish(key, config.publish[key].target, config.publish[key].option || {});
     });

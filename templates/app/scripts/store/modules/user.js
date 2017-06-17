@@ -29,36 +29,37 @@ const actions = {
       };
     });
 
-    commit(types.ALL_USERS, { users });
+    commit(types.ALL_USERS, users);
   },
-  addUser({ commit }, user) {
-    user = Object.assign({}, user);
-    console.info('add user', user);
+  addUser({ commit }, formData) {
+    let user = Object.assign({}, formData);
+    console.info('create user', user);
 
-    commit(types.ADD_USER, { user });
+    commit(types.CREATE_USER, user);
   },
-  deleteUser({ commit }, user) {
-    console.info('delete user', user);
+  removeUser({ commit }, id) {
+    console.info('delete user', id);
 
-    commit(types.DELETE_USER, { user });
+    commit(types.DELETE_USER, id);
   },
-  editUser({ commit }, { user, name }) {
-    console.info('edit user', user, name);
+  editUser({ commit }, formData) {
+    let user = Object.assign({}, formData);
+    console.info('update user', user);
 
-    commit(types.EDIT_USER, { user, name });
+    commit(types.UPDATE_USER, user);
   },
   getUser({ commit }, id) {
     console.info('one user', id);
 
-    commit(types.ONE_USER, { id });
+    commit(types.ONE_USER, id);
   }
 };
 
 const mutations = {
-  [types.ALL_USERS](state, { users }) {
+  [types.ALL_USERS](state, users) {
     state.users = users;
   },
-  [types.ADD_USER](state, { user }) {
+  [types.CREATE_USER](state, user) {
     // mock data
     user.id = state.users.length
       ? state.users[state.users.length - 1].id + 1
@@ -66,13 +67,19 @@ const mutations = {
 
     state.users.push(user);
   },
-  [types.DELETE_USER](state, { user }) {
-    state.users.splice(state.users.indexOf(user), 1);
+  [types.DELETE_USER](state, id) {
+    if (state.users) {
+      let index = state.users.findIndex(user => user.id === +id);
+      state.users.splice(index, 1);
+    }
   },
-  [types.EDIT_USER](state, { user, name }) {
-    user.name = name;
+  [types.UPDATE_USER](state, user) {
+    if (state.users) {
+      let index = state.users.findIndex(_user => _user.id === +user.id);
+      state.users[index] = user;
+    }
   },
-  [types.ONE_USER](state, { id }) {
+  [types.ONE_USER](state, id) {
     if (state.users) {
       let user = state.users.find(user => user.id === +id);
       state.currentUser = user;

@@ -4,6 +4,10 @@
     <div v-if="user">
       <p>ID：{{ user.id }}</p>
       <p>Name: <input type="text" v-model.trim="user.name" @keyup.enter="onUpdate"></p>
+      <p>
+        <button type="button" @click="$router.back()">Back</button>
+        <button type="button" @click="onUpdate">Save</button>
+      </p>
     </div>
     <p class="no-data" v-else>No data</p>
   </div>
@@ -25,10 +29,8 @@ export default {
     ]),
     async onUpdate() {
       if (this.user.name) {
-        let user = this.user;
-        let name = this.user.name
         // update
-        await this.editUser({ user, name });
+        await this.editUser(this.user);
         // back
         this.$router.push('/user/list');
       }

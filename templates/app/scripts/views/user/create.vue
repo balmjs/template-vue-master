@@ -2,7 +2,11 @@
   <div class="page--user user-create">
     <h3>Create a new user</h3>
     <p>
-      <input type="text" v-model="formData.name" @keyup.enter="onCreate">
+      <input type="text" v-model.trim="user.name" @keyup.enter="onCreate">
+    </p>
+    <p>
+      <button type="button" @click="$router.back()">Back</button>
+      <button type="button" @click="onCreate">Save</button>
     </p>
   </div>
 </template>
@@ -13,7 +17,7 @@ import {mapActions} from 'vuex';
 export default {
   data() {
     return {
-      formData: {
+      user: {
         name: ''
       }
     };
@@ -23,11 +27,11 @@ export default {
       'addUser'
     ]),
     async onCreate() {
-      if (this.formData.name) {
+      if (this.user.name) {
         // add
-        await this.addUser(this.formData);
+        await this.addUser(this.user);
         // clear
-        this.formData.name = '';
+        this.user.name = '';
         // back
         this.$router.push('/user/list');
       }

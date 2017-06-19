@@ -5,7 +5,7 @@ balm.config = {
   server: {
     open: true,
     proxyTable: config.proxyTable,
-    // historyApiFallback: true // For vue-router `mode: 'history'`
+    historyApiFallback: true // For vue-router `mode: 'history'`
   },
   roots: {
     source: 'app'
@@ -15,6 +15,12 @@ balm.config = {
       css: 'styles',
       js: 'scripts',
       img: 'images'
+    }
+  },
+  html: {
+    regex: {
+      css: '/css',
+      js: '/js'
     }
   },
   styles: {

@@ -1,8 +1,8 @@
 import userRoutes from './user';
 
-const Home = require('../views/home');
-const About = require('../views/about');
-const NotFound = require('../views/404');
+const Home = async () => await import('../views/home');
+const About = async () => await import('../views/about');
+const NotFound = async () => await import('../views/404');
 
 let baseRoutes = [{
   path: '/home',

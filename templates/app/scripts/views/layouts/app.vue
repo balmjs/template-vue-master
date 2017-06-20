@@ -13,8 +13,9 @@
 </template>
 
 <script>
-import Hello from '../components/hello';
-import MyMenu from '../components/menu';
+const Hello = async () => await import('../components/hello');
+const MyMenu = async () => await import('../components/menu');
+import logo from '../../../images/logo.png';
 
 export default {
   name: 'app',
@@ -24,7 +25,7 @@ export default {
   },
   data() {
     return {
-      logo: require('../../../images/logo.png')
+      logo
     };
   }
 };

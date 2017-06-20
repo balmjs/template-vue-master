@@ -1,7 +1,7 @@
-const UserIndex = resolve => require(['../views/user/index'], resolve);
-const UserList = resolve => require(['../views/user/list'], resolve);
-const UserCreate = resolve => require(['../views/user/create'], resolve);
-const UserDetail = resolve => require(['../views/user/detail'], resolve);
+const UserIndex = async () => await import('../views/user/index');
+const UserList = async () => await import('../views/user/list');
+const UserCreate = async () => await import('../views/user/create');
+const UserDetail = async () => await import('../views/user/detail');
 
 let userRoutes = [{
   path: '/user',

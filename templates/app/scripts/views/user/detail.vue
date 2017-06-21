@@ -1,15 +1,17 @@
 <template>
   <div class="page--user user-detail">
-    <h3>User Detail</h3>
-    <div v-if="user">
-      <p>ID：{{ user.id }}</p>
-      <p>Name: <input type="text" v-model.trim="user.name" @keyup.enter="onUpdate"></p>
-      <p>
-        <button type="button" @click="$router.back()">Back</button>
-        <button type="button" @click="onUpdate">Save</button>
-      </p>
-    </div>
-    <p class="no-data" v-else>No data</p>
+    <fieldset>
+      <legend>User Detail</legend>
+      <div v-if="user">
+        <p>ID：{{ user.id }}</p>
+        <p>Name: <input type="text" v-model.trim="user.name" @keyup.enter="onUpdate"></p>
+        <p>
+          <button type="button" @click="$router.back()">Back</button>
+          <button type="button" @click="onUpdate">Save</button>
+        </p>
+      </div>
+      <p v-else class="no-data">No data</p>
+    </fieldset>
   </div>
 </template>
 

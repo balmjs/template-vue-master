@@ -23,7 +23,7 @@
         </tr>
       </tbody>
     </table>
-    <p class="no-data" v-else>No data</p>
+    <p v-else class="no-data">No data</p>
   </div>
 </template>
 

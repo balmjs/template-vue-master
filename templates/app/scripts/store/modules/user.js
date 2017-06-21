@@ -8,10 +8,10 @@ const state = {
 };
 
 const getters = {
-  getAllUsers(state) {
+  allUsers(state) {
     return state.users;
   },
-  getUser(state) {
+  currentUser(state) {
     return state.currentUser;
   }
 };

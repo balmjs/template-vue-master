@@ -1,5 +1,5 @@
 const state = {
-  menus: []
+  menu: []
 };
 
 export default state;

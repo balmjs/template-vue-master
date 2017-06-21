@@ -1,8 +1,8 @@
 import * as types from './mutation-types';
 
 const mutations = {
-  [types.MENUS](state, { menus }) {
-    state.menus = menus;
+  [types.MENUS](state, menu) {
+    state.menu = menu;
   }
 };
 

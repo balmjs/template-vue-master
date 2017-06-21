@@ -4,12 +4,12 @@ import api from '../config/api';
 
 const actions = {
   async getMenu({ commit }) {
-    console.info('get menus');
+    console.info('get menu');
 
     let response = await axios.get(api.global.getMenu);
-    let menus = response.data;
+    let menu = response.data;
 
-    commit(types.MENUS, { menus });
+    commit(types.MENUS, menu);
   }
 };
 

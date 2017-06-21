@@ -1,6 +1,6 @@
 const getters = {
-  getMenu(state) {
-    return state.menus;
+  menu(state) {
+    return state.menu;
   }
 };
 

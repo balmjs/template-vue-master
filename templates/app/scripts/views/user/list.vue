@@ -33,7 +33,7 @@ import {mapGetters, mapActions} from 'vuex';
 export default {
   computed: {
     ...mapGetters({
-      users: 'getAllUsers'
+      users: 'allUsers'
     })
   },
   methods: {

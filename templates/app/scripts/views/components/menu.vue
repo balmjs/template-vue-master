@@ -1,8 +1,8 @@
 <template>
   <nav>
     <ul class="site-menu">
-      <li v-for="menu in menus">
-        <router-link :to="menu.url">{{ menu.name }}</router-link>
+      <li v-for="item in menu">
+        <router-link :to="item.url">{{ item.name }}</router-link>
       </li>
     </ul>
   </nav>
@@ -14,9 +14,9 @@ import {mapGetters, mapActions} from 'vuex';
 export default {
   name: 'my-menu',
   computed: {
-    ...mapGetters({
-      menus: 'getMenu'
-    })
+    ...mapGetters([
+      'menu'
+    ])
   },
   methods: {
     ...mapActions([
@@ -24,7 +24,7 @@ export default {
     ])
   },
   created() {
-    if (!this.menus.length) {
+    if (!this.menu.length) {
       this.getMenu();
     }
   }

@@ -1,7 +1,7 @@
 import userRoutes from './user';
-const Home = async () => await import('../views/home');
-const About = async () => await import('../views/about');
-const NotFound = async () => await import('../views/not-found');
+const Home = () => import('../views/home');
+const About = () => import('../views/about');
+const NotFound = () => import('../views/not-found');
 
 let baseRoutes = [{
   path: '/home',

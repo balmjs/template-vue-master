@@ -13,8 +13,8 @@
 </template>
 
 <script>
-const Hello = async () => await import('../components/hello');
-const MyMenu = async () => await import('../components/menu');
+const Hello = () => import('../components/hello');
+const MyMenu = () => import('../components/menu');
 import logo from '../../../images/logo.png';
 
 export default {

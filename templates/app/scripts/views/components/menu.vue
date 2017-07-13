@@ -1,6 +1,6 @@
 <template>
   <nav>
-    <ul class="site-menu">
+    <ul class="my-menu">
       <li v-for="item in menu">
         <router-link :to="item.url">{{ item.name }}</router-link>
       </li>

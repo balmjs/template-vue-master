@@ -47,5 +47,5 @@ export default {
       this.$router.push('/user/list');
     }
   }
-}
+};
 </script>

@@ -1,5 +1,5 @@
 <template>
-  <div class="hello">
+  <div class="my-hello">
     <h1>{{ msg }}</h1>
     <p>thx <a href="//balmjs.com/">BalmJS</a></p>
   </div>
@@ -7,13 +7,13 @@
 
 <script>
 export default {
-  name: 'hello',
+  name: 'my-hello',
   data () {
     return {
       msg: 'Hello Vue App'
     }
   }
-}
+};
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->

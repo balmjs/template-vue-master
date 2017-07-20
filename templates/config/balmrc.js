@@ -21,12 +21,6 @@ module.exports = {
       img: 'images'
     }
   },
-  html: {
-    regex: {
-      css: '/css',
-      js: '/js'
-    }
-  },
   styles: {
     ext: 'scss',
     autoprefixer: [
@@ -40,7 +34,6 @@ module.exports = {
       vue: ['vue', 'vue-router', 'vuex', 'axios'],
       main: './app/scripts/main.js' // Entry js file
     },
-    publicPath: '/',
     loaders: [{
       test: /\.vue$/,
       loader: 'vue',
@@ -54,6 +47,7 @@ module.exports = {
   },
   cache: true,
   assets: {
+    publicUrl: '/',
     root: 'assets', // Replace 'assets' to your remote project root
     publicPath: 'public',
     subDir: 'web'

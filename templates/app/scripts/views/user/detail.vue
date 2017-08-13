@@ -27,7 +27,8 @@ export default {
   methods: {
     ...mapActions([
       'getUser',
-      'editUser'
+      'editUser',
+      'resetUser'
     ]),
     async onUpdate() {
       if (this.user.name) {
@@ -46,6 +47,9 @@ export default {
       console.warn('no user data');
       this.$router.push('/user/list');
     }
+  },
+  beforeDestroy() {
+    this.resetUser();
   }
 };
 </script>

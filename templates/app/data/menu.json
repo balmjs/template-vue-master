@@ -6,5 +6,5 @@
   "url": "/about"
 }, {
   "name": "User",
-  "url": "/user/list"
+  "url": "/user"
 }]

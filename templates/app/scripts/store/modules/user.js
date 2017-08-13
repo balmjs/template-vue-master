@@ -4,7 +4,7 @@ import api from '../../config/api';
 
 const state = {
   users: [],
-  currentUser: null
+  currentUser: {}
 };
 
 const getters = {
@@ -12,7 +12,7 @@ const getters = {
     return state.users;
   },
   currentUser(state) {
-    return state.currentUser;
+    return Object.assign({}, state.currentUser);
   }
 };
 
@@ -52,6 +52,11 @@ const actions = {
     console.info('one user', id);
 
     commit(types.ONE_USER, id);
+  },
+  resetUser({ commit }) {
+    console.info('clear user');
+
+    commit(types.RESET_USER);
   }
 };
 
@@ -84,6 +89,9 @@ const mutations = {
       let user = state.users.find(user => user.id === +id);
       state.currentUser = user;
     }
+  },
+  [types.RESET_USER]() {
+    state.currentUser = {};
   }
 };
 

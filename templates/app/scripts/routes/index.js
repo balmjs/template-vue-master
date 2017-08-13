@@ -1,22 +1,15 @@
+import Vue from 'vue';
+import VueRouter from 'vue-router';
+import baseRoutes from './base';
 import userRoutes from './user';
-const Home = () => import('../views/home');
-const About = () => import('../views/about');
-const NotFound = () => import('../views/not-found');
 
-let baseRoutes = [{
-  path: '/home',
-  name: 'home',
-  component: Home,
-  alias: '/'
-}, {
-  path: '/about',
-  name: 'about',
-  component: About
-}, {
-  path: '*',
-  component: NotFound
-}];
+Vue.use(VueRouter);
 
 let routes = baseRoutes.concat(userRoutes);
 
-export default routes;
+const router = new VueRouter({
+  mode: 'history',
+  routes
+});
+
+export default router;

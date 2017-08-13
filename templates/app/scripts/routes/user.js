@@ -7,6 +7,7 @@ let userRoutes = [{
   path: '/user',
   name: 'user',
   component: UserIndex,
+  redirect: '/user/list',
   children: [{
     path: 'list',
     name: 'user.list',

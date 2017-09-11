@@ -1,13 +1,11 @@
 import * as types from './mutation-types';
-import axios from 'axios';
-import api from '../config/api';
+import API from '../api';
 
 const actions = {
   async getMenu({ commit }) {
     console.info('get menu');
 
-    let response = await axios.get(api.global.getMenu);
-    let menu = response.data;
+    let menu = await API.getMenu();
 
     commit(types.MENUS, menu);
   }

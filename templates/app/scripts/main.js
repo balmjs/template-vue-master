@@ -1,11 +1,11 @@
 import Vue from 'vue';
-import axios from 'axios';
+import $http from './plugins/$http';
 import App from './views/layouts/app';
 import router from './routes';
 import store from './store';
 
 Vue.config.productionTip = false;
-Vue.prototype.$http = axios; // TODO: error handler
+Vue.use($http);
 
 new Vue({
   el: '#app',

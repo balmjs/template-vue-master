@@ -1,10 +1,12 @@
-.userdata {
-  width: 400px;
-  text-align: center;
-  th {
-    border-bottom: 1px solid;
-  }
-  i {
-    cursor: pointer;
+.user-list {
+  .userdata {
+    width: 400px;
+    text-align: center;
+    th {
+      border-bottom: 1px solid;
+    }
+    i {
+      cursor: pointer;
+    }
   }
 }

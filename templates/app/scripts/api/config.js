@@ -1,5 +1,5 @@
 export default {
-  global: {
+  base: {
     getMenu: '/data/menu.json',
   },
   user: {

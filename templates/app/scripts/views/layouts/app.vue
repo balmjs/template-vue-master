@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <header>
+    <header class="hero">
       <img :src="logo" alt="">
       <my-hello></my-hello>
     </header>

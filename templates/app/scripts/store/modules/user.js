@@ -71,19 +71,19 @@ const mutations = {
     state.users.push(user);
   },
   [types.DELETE_USER](state, id) {
-    if (state.users) {
+    if (state.users.length) {
       let index = state.users.findIndex(user => user.id === +id);
       state.users.splice(index, 1);
     }
   },
   [types.UPDATE_USER](state, user) {
-    if (state.users) {
+    if (state.users.length) {
       let index = state.users.findIndex(_user => _user.id === +user.id);
       state.users[index] = user;
     }
   },
   [types.ONE_USER](state, id) {
-    if (state.users) {
+    if (state.users.length) {
       let user = state.users.find(user => user.id === +id);
       state.currentUser = user;
     }

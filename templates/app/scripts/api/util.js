@@ -1,4 +1,5 @@
 import UI from '../store/event';
+import { OK } from '../config/contants';
 
 export const callback = ({ code, data, message }) => {
   let result = {
@@ -6,10 +7,17 @@ export const callback = ({ code, data, message }) => {
     data
   };
 
-  if (code === 200) {
+  if (code === OK) {
     result.success = true;
   } else {
-    UI.$alert(message); // Need BalmUI
+    // Need BalmUI
+    if (UI.$alert) { // for desktop
+      UI.$alert(message);
+    } else if (UI.$toast) { // for mobile
+      UI.$toast(message);
+    } else {
+      alert(message);
+    }
   }
 
   return result;

@@ -4,7 +4,7 @@ import URL from './config';
 
 export default {
   async getMenu() {
-    let response = await axios.get(URL.global.getMenu);
+    let response = await axios.get(URL.base.getMenu);
     return response.data;
   }
 };

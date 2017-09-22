@@ -4,7 +4,8 @@ import { OK } from '../config/contants';
 export const callback = ({ code, data, message }) => {
   let result = {
     success: false,
-    data
+    data,
+    message
   };
 
   if (code === OK) {

@@ -4,3 +4,11 @@
     <p>Material Design for Vue@2.1.0+</p>
   </div>
 </template>
+
+<script>
+export default {
+  metaInfo: {
+    title: 'About Us'
+  }
+};
+</script>

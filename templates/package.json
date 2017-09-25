@@ -1,6 +1,6 @@
 {
   "name": "my-vue-project",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "A Vue.js project with router & vuex",
   "private": true,
   "scripts": {
@@ -10,6 +10,7 @@
   "dependencies": {
     "axios": "^0.16.2",
     "vue": "^2.4.4",
+    "vue-meta": "^1.2.0",
     "vue-router": "^2.7.0",
     "vuex": "^2.4.0"
   },

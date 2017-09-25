@@ -19,6 +19,9 @@
 import {mapGetters, mapActions} from 'vuex';
 
 export default {
+  metaInfo: {
+    titleTemplate: '%s - Detail'
+  },
   computed: {
     ...mapGetters({
       user: 'currentUser'

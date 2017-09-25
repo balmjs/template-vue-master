@@ -4,3 +4,11 @@
     <p>A flexible front-end workflow for webapps</p>
   </div>
 </template>
+
+<script>
+export default {
+  metaInfo: {
+    title: 'Home'
+  }
+};
+</script>

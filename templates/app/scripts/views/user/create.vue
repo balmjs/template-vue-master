@@ -17,6 +17,9 @@
 import {mapActions} from 'vuex';
 
 export default {
+  metaInfo: {
+    titleTemplate: '%s - Create'
+  },
   data() {
     return {
       user: {

@@ -31,6 +31,9 @@
 import {mapGetters, mapActions} from 'vuex';
 
 export default {
+  metaInfo: {
+    titleTemplate: '%s - List'
+  },
   computed: {
     ...mapGetters({
       users: 'allUsers'

@@ -1,17 +1,23 @@
 .my-menu {
   display: flex;
+
   padding: 0;
   li {
     width: 120px;
+
     list-style: none;
+
     text-align: center;
+
     border: 1px solid;
     a {
       display: block;
+
       text-decoration: none;
     }
     .router-link-active {
       font-weight: bold;
+
       color: white;
       background: black;
     }

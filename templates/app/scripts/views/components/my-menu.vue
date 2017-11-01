@@ -18,15 +18,15 @@ export default {
       'menu'
     ])
   },
-  methods: {
-    ...mapActions([
-      'getMenu'
-    ])
-  },
   created() {
     if (!this.menu.length) {
       this.getMenu();
     }
+  },
+  methods: {
+    ...mapActions([
+      'getMenu'
+    ])
   }
 };
 </script>

@@ -7,7 +7,7 @@
 
 <script>
 export default {
-  name: 'my-hello',
+  name: 'hello',
   data () {
     return {
       msg: 'Hello Vue App'

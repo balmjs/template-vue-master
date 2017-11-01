@@ -39,6 +39,11 @@ export default {
       users: 'allUsers'
     })
   },
+  created() {
+    if (!this.users.length) {
+      this.getAllUsers();
+    }
+  },
   methods: {
     ...mapActions([
       'getAllUsers',
@@ -48,11 +53,6 @@ export default {
       if (confirm(`Are your sure to delete ${user.name}`)) {
         await this.removeUser(user.id);
       }
-    }
-  },
-  created() {
-    if (!this.users.length) {
-      this.getAllUsers();
     }
   }
 };

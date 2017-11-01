@@ -27,6 +27,18 @@ export default {
       user: 'currentUser'
     })
   },
+  async created() {
+    let userId = this.$route.params.id;
+    await this.getUser(userId);
+
+    if (!this.user) {
+      console.warn('no user data');
+      this.$router.push('/user/list');
+    }
+  },
+  beforeDestroy() {
+    this.resetUser();
+  },
   methods: {
     ...mapActions([
       'getUser',
@@ -41,18 +53,6 @@ export default {
         this.$router.push('/user/list');
       }
     }
-  },
-  async created() {
-    let userId = this.$route.params.id;
-    await this.getUser(userId);
-
-    if (!this.user) {
-      console.warn('no user data');
-      this.$router.push('/user/list');
-    }
-  },
-  beforeDestroy() {
-    this.resetUser();
   }
 };
 </script>

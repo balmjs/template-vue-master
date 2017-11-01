@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div v-show="!$newWindow.show" class="container">
     <header class="hero">
       <img :src="logo" alt="">
       <hello></hello>

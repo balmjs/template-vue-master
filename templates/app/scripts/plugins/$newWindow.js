@@ -9,21 +9,21 @@ export default {
       data() {
         return {
           show: false,
-          options: null,
-          component: ''
+          componentName: '',
+          componentOptions: null
         };
       },
       methods: {
-        open(options = {}, component = '') {
-          this.options = options;
-          this.component = component;
+        open(componentName = '', componentOptions = {}) {
+          this.componentName = componentName;
+          this.componentOptions = componentOptions;
           this.show = true;
         },
         close() {
           this.show = false;
         }
       },
-      template: '<new-window v-if="show" :options="options" :component="component" @close="close"></new-window>'
+      template: '<new-window v-if="show" :componentName="componentName" :componentOptions="componentOptions" @close="close"></new-window>'
     }).$mount('#new-window');
   }
 };

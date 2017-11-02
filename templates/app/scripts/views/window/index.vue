@@ -1,18 +1,18 @@
 <template>
   <div>
     <button type="button" @click="openNewWindow()">Open New Window</button>
-    <button type="button" @click="openNewWindow('Hello', 'page-a')">Open A Window</button>
-    <button type="button" @click="openNewWindow('World', 'page-b')">Open B Window</button>
+    <button type="button" @click="openNewWindow('page-a', 'Hello')">Open A Window</button>
+    <button type="button" @click="openNewWindow('page-b', 'World')">Open B Window</button>
   </div>
 </template>
 
 <script>
 export default {
   methods: {
-    openNewWindow(msg = '', page = '') {
-      this.$newWindow.open({
+    openNewWindow(page = '', msg = '') {
+      this.$newWindow.open(page, {
         msg
-      }, page);
+      });
     }
   }
 };

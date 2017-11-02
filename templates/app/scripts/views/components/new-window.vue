@@ -3,7 +3,7 @@
     <!-- Need BalmUI: -->
     <!-- <ui-icon class="close" @click.native="$emit('close')">close</ui-icon> -->
     <i class="close" @click="$emit('close')">✖️</i>
-    <component :is="currentView" :options="options"></component>
+    <component :is="currentView" :options="componentOptions"></component>
   </div>
 </template>
 
@@ -22,20 +22,20 @@ export default {
     pageB
   },
   props: {
-    options: {
+    componentName: {
+      type: String,
+      required: true
+    },
+    componentOptions: {
       type: Object,
       default: () => {
         return {};
       }
-    },
-    component: {
-      type: String,
-      default: ''
     }
   },
   data() {
     return {
-      currentView: this.component || DefaultView
+      currentView: this.componentName || DefaultView
     }
   }
 };

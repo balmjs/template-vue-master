@@ -1,7 +1,8 @@
+import * as $http from 'axios';
 import UI from '../store/event';
 import { OK } from '../config/constants';
 
-export const callback = ({ code, data, message }) => {
+const callback = ({ code, data, message }) => {
   let result = {
     success: false,
     data,
@@ -22,4 +23,10 @@ export const callback = ({ code, data, message }) => {
   }
 
   return result;
+};
+
+export {
+  $http,
+  UI,
+  callback
 };

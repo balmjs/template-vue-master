@@ -1,10 +1,9 @@
-import axios from 'axios';
-import { callback } from './util';
+import { $http, callback } from './util';
 import URL from './config';
 
 export default {
   async getAllUsers() {
-    let response = await axios.get(URL.user.getList);
+    let response = await $http.get(URL.user.getList);
     return response.data;
   }
 };

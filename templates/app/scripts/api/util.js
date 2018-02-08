@@ -13,9 +13,11 @@ const callback = ({ code, data, message }) => {
     result.success = true;
   } else {
     // Need BalmUI
-    if (UI.$alert) { // for desktop
+    if (UI.$alert) {
+      // for desktop
       UI.$alert(message);
-    } else if (UI.$toast) { // for mobile
+    } else if (UI.$toast) {
+      // for mobile
       UI.$toast(message);
     } else {
       alert(message);
@@ -25,8 +27,4 @@ const callback = ({ code, data, message }) => {
   return result;
 };
 
-export {
-  $http,
-  UI,
-  callback
-};
+export { $http, UI, callback };

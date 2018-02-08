@@ -16,7 +16,7 @@
 </template>
 
 <script>
-import {mapGetters, mapActions} from 'vuex';
+import { mapGetters, mapActions } from 'vuex';
 
 export default {
   metaInfo: {
@@ -40,11 +40,7 @@ export default {
     this.resetUser();
   },
   methods: {
-    ...mapActions([
-      'getUser',
-      'editUser',
-      'resetUser'
-    ]),
+    ...mapActions(['getUser', 'editUser', 'resetUser']),
     async onUpdate() {
       if (this.user.name) {
         // update

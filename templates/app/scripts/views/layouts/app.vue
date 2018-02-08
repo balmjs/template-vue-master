@@ -13,15 +13,15 @@
 </template>
 
 <script>
-const hello = () => import('../components/hello');
-const myMenu = () => import('../components/my-menu');
+const Hello = () => import('../components/hello');
+const MyMenu = () => import('../components/my-menu');
 import logo from '../../../images/logo.png';
 
 export default {
   name: 'app',
   components: {
-    hello,
-    myMenu
+    Hello,
+    MyMenu
   },
   data() {
     return {

@@ -1,6 +1,6 @@
 export default {
   base: {
-    getMenu: '/data/menu.json',
+    getMenu: '/data/menu.json'
   },
   user: {
     getList: '/data/user.json'

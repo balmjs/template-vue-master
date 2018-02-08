@@ -14,7 +14,7 @@
 </template>
 
 <script>
-import {mapActions} from 'vuex';
+import { mapActions } from 'vuex';
 
 export default {
   metaInfo: {
@@ -28,9 +28,7 @@ export default {
     };
   },
   methods: {
-    ...mapActions([
-      'addUser'
-    ]),
+    ...mapActions(['addUser']),
     async onCreate() {
       if (this.user.name) {
         // add

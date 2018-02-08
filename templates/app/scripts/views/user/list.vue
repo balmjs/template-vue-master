@@ -28,7 +28,7 @@
 </template>
 
 <script>
-import {mapGetters, mapActions} from 'vuex';
+import { mapGetters, mapActions } from 'vuex';
 
 export default {
   metaInfo: {
@@ -45,10 +45,7 @@ export default {
     }
   },
   methods: {
-    ...mapActions([
-      'getAllUsers',
-      'removeUser'
-    ]),
+    ...mapActions(['getAllUsers', 'removeUser']),
     async onDelete(user) {
       if (confirm(`Are your sure to delete ${user.name}`)) {
         await this.removeUser(user.id);

@@ -9,14 +9,12 @@
 </template>
 
 <script>
-import {mapGetters, mapActions} from 'vuex';
+import { mapGetters, mapActions } from 'vuex';
 
 export default {
   name: 'my-menu',
   computed: {
-    ...mapGetters([
-      'menu'
-    ])
+    ...mapGetters(['menu'])
   },
   created() {
     if (!this.menu.length) {
@@ -24,9 +22,7 @@ export default {
     }
   },
   methods: {
-    ...mapActions([
-      'getMenu'
-    ])
+    ...mapActions(['getMenu'])
   }
 };
 </script>

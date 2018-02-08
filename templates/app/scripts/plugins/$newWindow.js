@@ -23,7 +23,8 @@ export default {
           this.show = false;
         }
       },
-      template: '<new-window v-if="show" :componentName="componentName" :componentOptions="componentOptions" @close="close"></new-window>'
+      template:
+        '<new-window v-if="show" :componentName="componentName" :componentOptions="componentOptions" @close="close"></new-window>'
     }).$mount('#new-window');
   }
 };

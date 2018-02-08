@@ -1,7 +1,7 @@
 import Vue from 'vue';
 import $http from './plugins/$http';
 import $newWindow from './plugins/$newWindow';
-import app from './views/layouts/app';
+import App from './views/layouts/app';
 import router from './routes';
 import store from './store';
 
@@ -11,7 +11,7 @@ Vue.use($newWindow);
 
 new Vue({
   el: '#app',
-  components: { app },
+  components: { App },
   template: '<app/>',
   router,
   store

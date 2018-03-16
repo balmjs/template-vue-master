@@ -1,6 +1,6 @@
 import * as $http from 'axios';
-import UI from '../store/event';
-import { OK } from '../config/constants';
+import bus from '../store/bus';
+import { STATUS_OK } from '../config/constants';
 
 const callback = ({ code, data, message }) => {
   let result = {
@@ -9,16 +9,16 @@ const callback = ({ code, data, message }) => {
     message
   };
 
-  if (code === OK) {
+  if (code === STATUS_OK) {
     result.success = true;
   } else {
     // Need BalmUI
-    if (UI.$alert) {
+    if (bus.$alert) {
       // for desktop
-      UI.$alert(message);
-    } else if (UI.$toast) {
+      bus.$alert(message);
+    } else if (bus.$toast) {
       // for mobile
-      UI.$toast(message);
+      bus.$toast(message);
     } else {
       alert(message);
     }
@@ -27,4 +27,4 @@ const callback = ({ code, data, message }) => {
   return result;
 };
 
-export { $http, UI, callback };
+export { $http, bus, callback };

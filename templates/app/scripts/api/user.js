@@ -4,6 +4,6 @@ import URL from './config';
 export default {
   async getAllUsers() {
     let response = await $http.get(URL.user.getList);
-    return response.data;
+    return callback(response.data);
   }
 };

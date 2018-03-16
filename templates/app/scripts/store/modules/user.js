@@ -54,7 +54,7 @@ const actions = {
   async getAllUsers({ commit }) {
     console.info('all users');
 
-    let data = await API.getAllUsers();
+    let { data } = await API.getAllUsers();
     let users = data.map(user => {
       return {
         id: user.id,

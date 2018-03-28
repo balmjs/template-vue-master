@@ -12,12 +12,12 @@ const callback = ({ code, data, message }) => {
   if (code === STATUS_OK) {
     result.success = true;
   } else {
-    // Need BalmUI
+    // You need BalmUI Lite
     if (bus.$alert) {
-      // for desktop
+      // For desktop
       bus.$alert(message);
     } else if (bus.$toast) {
-      // for mobile
+      // For mobile
       bus.$toast(message);
     } else {
       alert(message);

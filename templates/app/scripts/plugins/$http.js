@@ -18,6 +18,7 @@ export default {
         return response;
       },
       error => {
+        // TODO: error handler
         return Promise.reject(error);
       }
     );

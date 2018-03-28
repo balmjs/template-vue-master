@@ -1,4 +1,5 @@
 # BalmJS template - vue-master
+
 > A Vue project with router & Vuex
 
 ## Installation
@@ -13,7 +14,7 @@ yarn
 npm i
 ```
 
-> (recommended) [BalmUI Lite](http://mdl.balmjs.com/) for your project
+> (Recommended) [BalmUI Lite](http://mdl.balmjs.com/) for your project
 
 ## Enjoy
 

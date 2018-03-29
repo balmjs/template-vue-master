@@ -5,8 +5,7 @@ import { STATUS_OK } from '../config/constants';
 const callback = ({ code, data, message }) => {
   let result = {
     success: false,
-    data,
-    message
+    data
   };
 
   if (code === STATUS_OK) {

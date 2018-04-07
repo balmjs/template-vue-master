@@ -1,15 +1,16 @@
+// Documentation - http://balmjs.com/docs/en/configuration/toc.html
+// 中文文档 - http://balmjs.com/docs/zh-cn/configuration/toc.html
 var balm = require('balm');
 
 module.exports = {
   server: {
     open: true,
-    proxyTable: {
-      '/api': {
-        target: 'http://your.project.dev',
-        changeOrigin: true
-      }
+    proxyContext: '/api',
+    proxyOptions: {
+      target: 'http://your.project.dev', // Target host
+      changeOrigin: true // Needed for virtual hosted sites
     },
-    historyApiFallback: true // For vue-router `mode: 'history'`
+    historyOptions: true // For vue-router `mode: 'history'`
   },
   roots: {
     source: 'app'
@@ -33,10 +34,7 @@ module.exports = {
     loaders: [
       {
         test: /\.vue$/,
-        loader: 'vue',
-        options: {
-          esModule: false // For `const MyComponent = () => import('./components/my-component');`
-        }
+        loader: 'vue'
       }
     ],
     alias: {
@@ -51,6 +49,4 @@ module.exports = {
     subDir: 'web'
   }
   // More Config
-  // Documentation - http://balmjs.com/docs/en/configuration/toc.html
-  // 中文文档 - http://balmjs.com/docs/zh-cn/configuration/toc.html
 };

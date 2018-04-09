@@ -1,6 +1,10 @@
-import baseApi from './base';
-import userApi from './user';
+import baseAPI from './base';
+import userAPI from './user';
 
-const API = Object.assign({}, baseApi, userApi);
+const API = {
+  base: baseAPI,
+  user: userAPI
+};
 
 export default API;
+export { baseAPI, userAPI };

@@ -15,7 +15,7 @@ export default {
 
     axios.interceptors.response.use(
       response => {
-        return response;
+        return response.data;
       },
       error => {
         // TODO: error handler

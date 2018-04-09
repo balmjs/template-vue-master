@@ -5,7 +5,7 @@ const actions = {
   async getMenu({ commit }) {
     console.info('get menu');
 
-    let { data } = await API.getMenu();
+    let { data } = await API.base.getMenu();
     let menu = data;
 
     commit(types.MENUS, menu);

@@ -51,10 +51,14 @@ const mutations = {
 };
 
 const actions = {
-  async getAllUsers({ commit }) {
+  async getAllUsers({ commit }, params = {}) {
     console.info('all users');
 
-    let { data } = await API.getAllUsers();
+    // TODO
+    API.user.getAll(params);
+
+    // NOTE: For Test
+    let { data } = await API.user.getAllUsers();
     let users = data.map(user => {
       return {
         id: user.id,
@@ -68,10 +72,16 @@ const actions = {
     let user = Object.assign({}, formData);
     console.info('create user', user);
 
+    // TODO
+    API.user.create(user);
+
     commit(types.CREATE_USER, user);
   },
   removeUser({ commit }, id) {
     console.info('delete user', id);
+
+    // TODO
+    API.user.delete(id);
 
     commit(types.DELETE_USER, id);
   },
@@ -79,10 +89,16 @@ const actions = {
     let user = Object.assign({}, formData);
     console.info('update user', user);
 
+    // TODO
+    API.user.update(user.id, user);
+
     commit(types.UPDATE_USER, user);
   },
   getUser({ commit }, id) {
     console.info('one user', id);
+
+    // TODO
+    API.user.getOne(id);
 
     commit(types.ONE_USER, id);
   },

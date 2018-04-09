@@ -1,9 +1,15 @@
-import { $http, callback } from './util';
 import URL from './config';
+import RestService from './service';
+import { http, callback } from './util';
 
-export default {
-  async getAllUsers() {
-    let response = await $http.get(URL.user.getList);
-    return callback(response.data);
+class UserService extends RestService {
+  constructor() {
+    super(URL.user.user);
   }
-};
+
+  async getAllUsers() {
+    return callback(await http.get(URL.user.getList));
+  }
+}
+
+export default new UserService();

@@ -1,6 +1,6 @@
 {
   "name": "my-vue-project",
-  "version": "4.0.0",
+  "version": "4.1.0",
   "description": "A Vue.js project with router & Vuex",
   "private": true,
   "scripts": {

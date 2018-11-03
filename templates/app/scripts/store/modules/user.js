@@ -58,7 +58,7 @@ const actions = {
     API.user.getAll(params);
 
     // NOTE: For Test
-    let { data } = await API.user.getAllUsers();
+    let data = await API.user.getAllUsers();
     let users = data.map(user => {
       return {
         id: user.id,

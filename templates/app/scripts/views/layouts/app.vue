@@ -27,6 +27,20 @@ export default {
     return {
       logo
     };
+  },
+  created() {
+    this.$bus.$on('message', message => {
+      // You need BalmUI (https://material.balmjs.com/)
+      if (this.$alert) {
+        // For desktop
+        this.$alert(message);
+      } else if (this.$toast) {
+        // For mobile
+        this.$toast(message);
+      } else {
+        alert(message);
+      }
+    });
   }
 };
 </script>

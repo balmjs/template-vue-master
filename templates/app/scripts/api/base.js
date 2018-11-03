@@ -1,8 +1,8 @@
-import { http, callback } from './util';
+import axios from 'axios';
 import URL from './config';
 
 export default {
   async getMenu() {
-    return callback(await http.get(URL.base.getMenu));
+    return await axios.get(URL.base.getMenu);
   }
 };

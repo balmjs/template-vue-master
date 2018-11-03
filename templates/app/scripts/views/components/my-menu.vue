@@ -1,7 +1,7 @@
 <template>
   <nav class="menu-container">
     <ul class="my-menu">
-      <li v-for="item in menu">
+      <li v-for="(item, index) in menu" :key="index">
         <router-link :to="item.url">{{ item.name }}</router-link>
       </li>
     </ul>

@@ -1,10 +1,10 @@
-var balm = require('balm');
-var config = require('./config/balmrc');
-var templates = require('./config/publish');
+const balm = require('balm');
+const config = require('./config/balmrc');
+const templates = require('./config/publish');
 
 balm.config = config;
 
-balm.go(function(mix) {
+balm.go(mix => {
   if (balm.config.production) {
     // For test data
     mix.copy('./app/data/*', './dist/data');
@@ -12,7 +12,7 @@ balm.go(function(mix) {
     // Publish assets
     mix.publish();
     // Publish templates
-    Object.keys(templates).forEach(function(key) {
+    Object.keys(templates).forEach(key => {
       mix.publish(key, templates[key].target, templates[key].option || {});
     });
   }

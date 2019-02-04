@@ -5,7 +5,7 @@ const templates = require('./config/publish');
 balm.config = config;
 
 balm.go(mix => {
-  if (balm.config.production) {
+  if (balm.config.isProd) {
     // For test data
     mix.copy('./app/data/*', './dist/data');
 

@@ -4,7 +4,7 @@ module.exports = {
   root: true,
   parserOptions: {
     parser: 'babel-eslint',
-    ecmaVersion: 2018,
+    ecmaVersion: 2019,
     sourceType: 'module'
   },
   env: {
@@ -14,7 +14,7 @@ module.exports = {
   plugins: ['vue'],
   // https://github.com/vuejs/eslint-plugin-vue#priority-a-essential-error-prevention
   // consider switching to `plugin:vue/strongly-recommended` or `plugin:vue/recommended` for stricter rules.
-  extends: ['plugin:vue/essential'],
+  extends: ['plugin:vue/essential', 'eslint:recommended'],
   // add your custom rules here
   rules: {
     // allow debugger during development

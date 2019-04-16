@@ -1,7 +1,7 @@
 <template>
   <div v-show="!$newWindow.show" class="container">
     <header class="hero">
-      <img :src="logo" alt="">
+      <img :src="logo" alt>
       <hello></hello>
     </header>
     <hr>
@@ -13,9 +13,9 @@
 </template>
 
 <script>
-const Hello = () => import('../components/hello');
-const MyMenu = () => import('../components/my-menu');
-import logo from '../../assets/logo.png';
+const Hello = () => import('@/views/components/hello');
+const MyMenu = () => import('@/views/components/my-menu');
+import logo from '@/assets/logo.png';
 
 export default {
   name: 'app',

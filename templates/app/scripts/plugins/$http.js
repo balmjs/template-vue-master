@@ -1,6 +1,6 @@
 import axios from 'axios';
-import bus from '../store/bus';
-import { STATUS_OK } from '../config/constants';
+import bus from '@/store/bus';
+import { STATUS_OK } from '@/config';
 
 axios.interceptors.request.use(
   config => {

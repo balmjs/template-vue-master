@@ -1,7 +1,7 @@
-const UserIndex = () => import('../views/user/index');
-const UserList = () => import('../views/user/list');
-const UserCreate = () => import('../views/user/create');
-const UserDetail = () => import('../views/user/detail');
+const UserIndex = () => import('@/views/user/index');
+const UserList = () => import('@/views/user/list');
+const UserCreate = () => import('@/views/user/create');
+const UserDetail = () => import('@/views/user/detail');
 
 let userRoutes = [
   {

@@ -1,14 +1,14 @@
 import axios from 'axios';
-import URL from './config';
+import API from '@/config/api';
 import RestService from './service';
 
 class UserService extends RestService {
   constructor() {
-    super(URL.user.user);
+    super(API.user.RESTful);
   }
 
   async getAllUsers() {
-    return await axios.get(URL.user.getList);
+    return await axios.get(API.user.getList);
   }
 }
 

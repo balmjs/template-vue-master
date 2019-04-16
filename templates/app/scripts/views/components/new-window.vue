@@ -8,8 +8,8 @@
 </template>
 
 <script>
-import pageA from '../window/a';
-import pageB from '../window/b';
+import pageA from '@/views/window/a';
+import pageB from '@/views/window/b';
 
 const DefaultView = {
   template: '<div>New Window</div>'

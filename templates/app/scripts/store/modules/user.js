@@ -1,5 +1,5 @@
-import * as types from '../mutation-types';
-import API from '../../api';
+import * as types from '@/store/mutation-types';
+import API from '@/api';
 
 const state = {
   users: [],

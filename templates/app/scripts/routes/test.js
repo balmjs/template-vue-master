@@ -1,4 +1,4 @@
-const Index = () => import('../views/window/index');
+const Index = () => import('@/views/window/index');
 
 let testRoutes = [
   {

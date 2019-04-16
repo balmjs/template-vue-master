@@ -1,4 +1,4 @@
-import newWindow from '../views/components/new-window';
+import newWindow from '@/views/components/new-window';
 
 export default {
   install(Vue) {

@@ -1,8 +1,8 @@
 import axios from 'axios';
-import URL from './config';
+import API from '@/config/api';
 
 export default {
   async getMenu() {
-    return await axios.get(URL.base.getMenu);
+    return await axios.get(API.base.getMenu);
   }
 };

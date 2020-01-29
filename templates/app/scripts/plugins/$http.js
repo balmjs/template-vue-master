@@ -2,6 +2,8 @@ import axios from 'axios';
 import bus from '@/store/bus';
 import { STATUS_OK } from '@/config';
 
+axios.defaults.baseURL = '/api';
+
 axios.interceptors.request.use(
   config => {
     return config;

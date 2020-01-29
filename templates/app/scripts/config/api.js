@@ -1,9 +1,11 @@
+import { DEBUG } from '@/config';
+
 export default {
   base: {
-    getMenu: '/data/menu.json'
+    getMenu: `/menu${DEBUG ? '' : '.json'}`
   },
   user: {
-    RESTful: '/api/v1/user',
-    getList: '/data/user.json'
+    RESTful: `/v1/user`,
+    getList: `/user${DEBUG ? '' : '.json'}`
   }
 };

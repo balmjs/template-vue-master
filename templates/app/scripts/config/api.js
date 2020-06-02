@@ -1,11 +1,11 @@
-import { DEBUG } from '@/config';
+import { isDev } from '@/config';
 
 export default {
   base: {
-    getMenu: `/menu${DEBUG ? '' : '.json'}`
+    getMenu: `/menu${isDev ? '' : '.json'}`
   },
   user: {
     RESTful: `/v1/user`,
-    getList: `/user${DEBUG ? '' : '.json'}`
+    getList: `/user${isDev ? '' : '.json'}`
   }
 };

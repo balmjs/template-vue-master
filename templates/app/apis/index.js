@@ -1,62 +1,30 @@
-import { Server } from 'miragejs';
 import { isDev } from '@/config';
+import { Server, Model } from 'miragejs';
+import { getBase } from './base';
+import { setUser, getUser } from './user';
 
 if (isDev) {
   const ApiRegExp = /^\/api\//;
 
   const server = new Server({
+    models: {
+      user: Model
+    },
+
+    seeds(server) {
+      setUser(server);
+      // More data
+    },
+
     routes() {
       this.namespace = '/api';
 
-      this.get('/menu', () => {
-        return {
-          code: 200,
-          message: 'OK',
-          data: [
-            {
-              name: 'Home',
-              url: '/home'
-            },
-            {
-              name: 'About',
-              url: '/about'
-            },
-            {
-              name: 'User',
-              url: '/user'
-            }
-          ]
-        };
-      });
-
-      this.get('/user', () => {
-        return {
-          code: 200,
-          message: 'OK',
-          data: [
-            {
-              id: 1,
-              name: '路人甲'
-            },
-            {
-              id: 2,
-              name: '路人乙'
-            },
-            {
-              id: 3,
-              name: '路人丙'
-            },
-            {
-              id: 4,
-              name: '路人丁'
-            }
-          ]
-        };
-      });
+      getBase(this);
+      getUser(this);
     }
   });
 
-  server.passthrough(request => {
+  server.passthrough((request) => {
     return !ApiRegExp.test(request.url);
   });
 }

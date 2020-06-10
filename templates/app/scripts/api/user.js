@@ -1,4 +1,5 @@
 import axios from 'axios';
+import bus from '@/store/bus';
 import API from '@/config/api';
 import RestService from './service';
 
@@ -8,6 +9,8 @@ class UserService extends RestService {
   }
 
   async getAllUsers() {
+    bus.$emit('on-loading');
+
     return await axios.get(API.user.getList);
   }
 }

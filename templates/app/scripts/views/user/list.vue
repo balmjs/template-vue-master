@@ -2,7 +2,9 @@
   <div class="page--user user-list">
     <h2>User list</h2>
     <p>
-      <router-link to="/user/create">Add new user</router-link>
+      <router-link to="/user/create">
+        Add new user
+      </router-link>
     </p>
     <table v-if="users.length" class="userdata">
       <thead>
@@ -17,13 +19,17 @@
           <td>{{ user.id }}</td>
           <td>{{ user.name }}</td>
           <td>
-            <router-link class="fa fa-edit" :to="`/user/${user.id}/edit`">Edit</router-link>
+            <router-link :to="`/user/${user.id}/edit`" class="fa fa-edit">
+              Edit
+            </router-link>
             <i class="fa fa-remove" @click="onDelete(user)">Delete</i>
           </td>
         </tr>
       </tbody>
     </table>
-    <p v-else class="no-data">No data</p>
+    <p v-else class="no-data">
+      No data
+    </p>
   </div>
 </template>
 

@@ -3,11 +3,15 @@
     <fieldset>
       <legend>Create a new user</legend>
       <p>
-        <input type="text" v-model.trim="user.name" @keyup.enter="onCreate">
+        <input v-model.trim="user.name" type="text" @keyup.enter="onCreate" />
       </p>
       <p>
-        <button type="button" @click="$router.back()">Back</button>
-        <button type="button" @click="onCreate">Save</button>
+        <button type="button" @click="$router.back()">
+          Back
+        </button>
+        <button type="button" @click="onCreate">
+          Save
+        </button>
       </p>
     </fieldset>
   </div>

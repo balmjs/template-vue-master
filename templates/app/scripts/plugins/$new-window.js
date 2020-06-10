@@ -1,10 +1,10 @@
-import newWindow from '@/views/components/new-window';
+import NewWindow from '@/views/components/new-window';
 
 export default {
   install(Vue) {
     Vue.prototype.$newWindow = new Vue({
       components: {
-        newWindow
+        NewWindow
       },
       data() {
         return {

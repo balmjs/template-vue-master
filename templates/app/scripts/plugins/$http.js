@@ -4,6 +4,10 @@ import { STATUS_OK } from '@/config';
 
 axios.defaults.baseURL = '/api';
 
+const errorHandler = ({ message }) => {
+  bus.$emit('error', message);
+};
+
 axios.interceptors.request.use(
   config => {
     return config;
@@ -15,21 +19,20 @@ axios.interceptors.request.use(
 
 axios.interceptors.response.use(
   response => {
-    bus.$emit('loaded');
+    bus.$emit('off-loading');
 
     // Your service logic
-    if (typeof response.data === 'object') {
-      let { code, data, message } = response.data;
-      if (code && +code !== STATUS_OK) {
-        bus.$emit('message', message);
-        return Promise.reject({ code, message });
-      } else {
-        return Promise.resolve(data);
-      }
+    const { code, message, data } = response.data;
+    if (code === STATUS_OK) {
+      return Promise.resolve(data);
+    } else {
+      errorHandler({ code, message });
+      return Promise.reject({ code, message });
     }
   },
   error => {
-    // TODO: error handler
+    bus.$emit('off-loading');
+
     return Promise.reject(error);
   }
 );

@@ -8,18 +8,18 @@
 </template>
 
 <script>
-import pageA from '@/views/window/a';
-import pageB from '@/views/window/b';
+import PageA from '@/views/window/a';
+import PageB from '@/views/window/b';
 
 const DefaultView = {
   template: '<div>New Window</div>'
 };
 
 export default {
-  name: 'new-window',
+  name: 'NewWindow',
   components: {
-    pageA,
-    pageB
+    PageA,
+    PageB
   },
   props: {
     componentName: {

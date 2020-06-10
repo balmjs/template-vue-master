@@ -1,10 +1,10 @@
 <template>
   <div v-show="!$newWindow.show" class="container">
     <header class="hero">
-      <img :src="logo" alt>
+      <img :src="logo" />
       <hello></hello>
     </header>
-    <hr>
+    <hr />
     <div class="content">
       <my-menu></my-menu>
       <router-view></router-view>
@@ -18,18 +18,27 @@ const MyMenu = () => import('@/views/components/my-menu');
 import logo from '@/assets/logo.png';
 
 export default {
-  name: 'app',
+  name: 'App',
   components: {
     Hello,
     MyMenu
   },
   data() {
     return {
-      logo
+      logo,
+      isLoading: false
     };
   },
   created() {
-    this.$bus.$on('message', message => {
+    this.$bus.$on('on-loading', () => {
+      this.isLoading = true;
+    });
+
+    this.$bus.$on('off-loading', () => {
+      this.isLoading = false;
+    });
+
+    this.$bus.$on('error', message => {
       // You need BalmUI (https://material.balmjs.com/)
       if (this.$alert) {
         // For desktop

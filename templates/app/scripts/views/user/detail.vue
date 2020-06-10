@@ -4,13 +4,22 @@
       <legend>User Detail</legend>
       <div v-if="user">
         <p>ID：{{ user.id }}</p>
-        <p>Name: <input type="text" v-model.trim="user.name" @keyup.enter="onUpdate"></p>
         <p>
-          <button type="button" @click="$router.back()">Back</button>
-          <button type="button" @click="onUpdate">Save</button>
+          Name:
+          <input v-model.trim="user.name" type="text" @keyup.enter="onUpdate" />
+        </p>
+        <p>
+          <button type="button" @click="$router.back()">
+            Back
+          </button>
+          <button type="button" @click="onUpdate">
+            Save
+          </button>
         </p>
       </div>
-      <p v-else class="no-data">No data</p>
+      <p v-else class="no-data">
+        No data
+      </p>
     </fieldset>
   </div>
 </template>

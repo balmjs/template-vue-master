@@ -1,9 +1,13 @@
 <template>
   <nav class="menu-container">
     <ul class="my-menu">
-      <li v-for="(item, index) in menu" :key="index">
-        <router-link :to="item.url">{{ item.name }}</router-link>
-      </li>
+      <template v-for="(item, index) in menu">
+        <li :key="index">
+          <router-link :to="item.url">
+            {{ item.name }}
+          </router-link>
+        </li>
+      </template>
     </ul>
   </nav>
 </template>
@@ -12,7 +16,7 @@
 import { mapGetters, mapActions } from 'vuex';
 
 export default {
-  name: 'my-menu',
+  name: 'MyMenu',
   computed: {
     ...mapGetters(['menu'])
   },

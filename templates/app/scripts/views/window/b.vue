@@ -7,9 +7,14 @@
 
 <script>
 export default {
-  name: 'page-b',
+  name: 'PageB',
   props: {
-    options: Object
+    options: {
+      type: Object,
+      default() {
+        return {};
+      }
+    }
   }
 };
 </script>

@@ -5,7 +5,8 @@ import store from '@/store';
 import $http from '@/plugins/$http';
 import $bus from '@/plugins/$bus';
 import $newWindow from '@/plugins/$new-window';
-import '../apis';
+
+import '../apis'; // NOTE: just for dev
 
 Vue.config.productionTip = false;
 Vue.use($http);

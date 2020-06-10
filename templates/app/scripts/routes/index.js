@@ -12,6 +12,7 @@ let routes = baseRoutes.concat(userRoutes, testRoutes);
 
 const router = new VueRouter({
   mode: 'history',
+  // base: '/app/', // NOTE: for Back-end
   routes
 });
 

@@ -7,9 +7,14 @@
 
 <script>
 export default {
-  name: 'page-a',
+  name: 'PageA',
   props: {
-    options: Object
+    options: {
+      type: Object,
+      default() {
+        return {};
+      }
+    }
   }
 };
 </script>

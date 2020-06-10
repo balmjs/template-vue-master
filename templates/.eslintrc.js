@@ -9,8 +9,7 @@ module.exports = {
     sourceType: 'module'
   },
   env: {
-    browser: true,
-    jest: true
+    browser: true
   },
   // required to lint *.vue files
   plugins: ['vue'],

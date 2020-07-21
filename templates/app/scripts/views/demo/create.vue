@@ -6,12 +6,8 @@
         <input v-model.trim="user.name" type="text" @keyup.enter="onCreate" />
       </p>
       <p>
-        <button type="button" @click="$router.back()">
-          Back
-        </button>
-        <button type="button" @click="onCreate">
-          Save
-        </button>
+        <button type="button" @click="$router.back()">Back</button>
+        <button type="button" @click="onCreate">Save</button>
       </p>
     </fieldset>
   </div>
@@ -40,7 +36,7 @@ export default {
         // clear
         this.user.name = '';
         // back
-        this.$router.push('/user/list');
+        this.$router.push({ name: 'demo.list' });
       }
     }
   }

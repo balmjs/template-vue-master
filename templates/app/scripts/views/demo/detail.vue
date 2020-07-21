@@ -9,17 +9,11 @@
           <input v-model.trim="user.name" type="text" @keyup.enter="onUpdate" />
         </p>
         <p>
-          <button type="button" @click="$router.back()">
-            Back
-          </button>
-          <button type="button" @click="onUpdate">
-            Save
-          </button>
+          <button type="button" @click="$router.back()">Back</button>
+          <button type="button" @click="onUpdate">Save</button>
         </p>
       </div>
-      <p v-else class="no-data">
-        No data
-      </p>
+      <p v-else class="no-data">No data</p>
     </fieldset>
   </div>
 </template>
@@ -42,7 +36,7 @@ export default {
 
     if (!this.user) {
       console.warn('no user data');
-      this.$router.push('/user/list');
+      this.$router.push({ name: 'demo.list' });
     }
   },
   beforeDestroy() {
@@ -55,7 +49,7 @@ export default {
         // update
         await this.editUser(this.user);
         // back
-        this.$router.push('/user/list');
+        this.$router.push({ name: 'demo.list' });
       }
     }
   }

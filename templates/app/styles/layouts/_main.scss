@@ -1,15 +1,13 @@
 .container {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  font-size: $fontSize-m;
-  margin-top: 10px;
-  text-align: center;
-  color: $primaryColor;
-  background-color: $primaryBgColor;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  background-color: $theme-bgcolor;
+  color: $text-primary-color;
+  font-size: $font-size-m;
 }
 
-.content {
-  padding: 10px 20px;
-  text-align: left;
+.hero {
+  text-align: center;
 }

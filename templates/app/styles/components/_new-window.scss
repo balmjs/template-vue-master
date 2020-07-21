@@ -2,21 +2,19 @@
   position: fixed;
   top: 0;
   left: 0;
-
   display: flex;
   overflow-x: hidden;
   overflow-y: auto;
-
   width: 100%;
   height: 100%;
+
   .close {
     position: absolute;
-
     cursor: pointer;
   }
-  > div {
-    padding: 40px;
 
+  > div {
     flex: auto;
+    padding: 40px;
   }
 }

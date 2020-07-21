@@ -11,12 +11,8 @@ export function getBase(server) {
           url: '/home'
         },
         {
-          name: 'About',
-          url: '/about'
-        },
-        {
-          name: 'User',
-          url: '/user'
+          name: 'Demo',
+          url: '/demo'
         }
       ]
     };

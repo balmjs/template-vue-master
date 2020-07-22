@@ -1,5 +1,5 @@
 import * as types from './mutation-types';
-import API from '@/api';
+import API from '@/services';
 
 const actions = {
   async getMenu({ commit }) {

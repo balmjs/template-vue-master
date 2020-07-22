@@ -1,7 +1,7 @@
 import axios from 'axios';
 import bus from '@/store/bus';
 import API from '@/config/api';
-import RestService from './service';
+import RestService from './rest';
 
 class UserService extends RestService {
   constructor() {

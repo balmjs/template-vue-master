@@ -1,15 +1,19 @@
 /* eslint-env node */
-const balm = require('balm');
 const config = require('./config/balmrc');
 const publish = require('./config/balm.publish');
 
-balm.config = config;
-
-balm.go((mix) => {
+const api = (mix) => {
   if (mix.env.isProd) {
     // For test data
     mix.copy('./app/data/*', './dist/api');
   }
 
   publish(mix);
-});
+};
+
+module.exports = () => {
+  return {
+    config,
+    api
+  };
+};

@@ -1,9 +1,8 @@
-/* eslint-env node */
 const path = require('path');
 const VueLoaderPlugin = require('vue-loader/lib/plugin');
 
-// Documentation - https://balmjs.com/docs/v2/config/
-// 中文文档 - https://balmjs.com/docs/v2/zh/config/
+// Documentation - https://balm.js.org/docs/config/
+// 中文文档 - https://balm.js.org/docs/zh/config/
 module.exports = {
   server: {
     // proxyConfig: {
@@ -39,7 +38,6 @@ module.exports = {
     }
   },
   assets: {
-    publicUrl: '/',
     root: 'assets', // Replace 'assets' to your remote project root
     mainDir: 'public',
     subDir: 'web',

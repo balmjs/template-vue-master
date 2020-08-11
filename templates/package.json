@@ -11,12 +11,12 @@
     "axios": "^0.19.2",
     "vue": "^2.6.11",
     "vue-meta": "^2.4.0",
-    "vue-router": "^3.3.4",
+    "vue-router": "^3.4.2",
     "vuex": "^3.5.1"
   },
   "devDependencies": {
     "babel-eslint": "^10.1.0",
-    "balm": "^3.0.0-beta.12",
+    "balm": "^3.0.0-beta.14",
     "eslint": "^7.6.0",
     "eslint-plugin-vue": "^6.2.2",
     "miragejs": "^0.1.40",

@@ -2,10 +2,10 @@ const Index = () => import('@/views/window/index');
 
 let testRoutes = [
   {
-    path: '/test',
-    name: 'test',
+    path: '/test-window',
+    name: 'test-window',
     component: Index
   }
 ];
 
-export default testRoutes;
+export default windowRoutes;

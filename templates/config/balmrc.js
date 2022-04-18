@@ -1,5 +1,13 @@
 const path = require('path');
-const VueLoaderPlugin = require('vue-loader/lib/plugin');
+const { VueLoaderPlugin } = require('vue-loader');
+
+const workspace = path.join(__dirname, '..');
+
+function resolve(dir) {
+  return path.join(workspace, dir);
+}
+
+const appRoot = 'app';
 
 // Documentation - https://balm.js.org/docs/config/
 // 中文文档 - https://balm.js.org/docs/zh/config/
@@ -15,15 +23,15 @@ module.exports = {
     historyOptions: true // For vue-router `mode: 'history'`
   },
   roots: {
-    source: 'app'
+    source: appRoot
   },
   styles: {
     extname: 'scss'
   },
   scripts: {
     entry: {
-      lib: ['vue', 'vue-router', 'vue-meta', 'vuex', 'axios'],
-      main: './app/scripts/main.js' // Entry js file
+      lib: ['vue', 'vue-router', 'vuex', 'axios'],
+      main: `./${appRoot}/scripts/main.js` // Entry js file
     },
     loaders: [
       {
@@ -34,7 +42,7 @@ module.exports = {
     plugins: [new VueLoaderPlugin()],
     alias: {
       vue$: 'vue/dist/vue.esm.js',
-      '@': path.resolve(__dirname, '..', 'app', 'scripts')
+      '@': resolve(`${appRoot}/scripts`)
     }
   },
   assets: {

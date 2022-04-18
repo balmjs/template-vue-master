@@ -1,5 +1,5 @@
 <template>
-  <div class="page--user user-detail">
+  <div class="page-user-detail">
     <fieldset>
       <legend>User Detail</legend>
       <div v-if="user">
@@ -22,9 +22,6 @@
 import { mapGetters, mapActions } from 'vuex';
 
 export default {
-  metaInfo: {
-    titleTemplate: '%s - Detail'
-  },
   computed: {
     ...mapGetters({
       user: 'currentUser'

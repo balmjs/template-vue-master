@@ -1,13 +1,5 @@
 <template>
-  <div class="user-container">
+  <div class="page-user user-container">
     <router-view></router-view>
   </div>
 </template>
-
-<script>
-export default {
-  metaInfo: {
-    title: 'User'
-  }
-};
-</script>

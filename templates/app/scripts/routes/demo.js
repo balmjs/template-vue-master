@@ -1,32 +1,32 @@
-const UserIndex = () => import('@/views/demo/index');
-const UserList = () => import('@/views/demo/list');
-const UserCreate = () => import('@/views/demo/create');
-const UserDetail = () => import('@/views/demo/detail');
+import DemoIndex from '@/views/demo/index';
+const DemoList = () => import('@/views/demo/list');
+const DemoCreate = () => import('@/views/demo/create');
+const DemoDetail = () => import('@/views/demo/detail');
 
-let userRoutes = [
+const demoRoutes = [
   {
     path: '/demo',
     name: 'demo',
-    component: UserIndex,
+    component: DemoIndex,
     redirect: '/demo/list',
     children: [
       {
         path: 'list',
         name: 'demo.list',
-        component: UserList
+        component: DemoList
       },
       {
         path: 'create',
         name: 'demo.create',
-        component: UserCreate
+        component: DemoCreate
       },
       {
         path: ':id/edit',
         name: 'demo.edit',
-        component: UserDetail
+        component: DemoDetail
       }
     ]
   }
 ];
 
-export default userRoutes;
+export default demoRoutes;

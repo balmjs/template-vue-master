@@ -1,5 +1,5 @@
 <template>
-  <div v-show="!$newWindow.show" class="container">
+  <div class="container">
     <header class="hero">
       <img :src="logo" />
       <hello></hello>
@@ -24,31 +24,8 @@ export default {
   },
   data() {
     return {
-      logo,
-      isLoading: false
+      logo
     };
-  },
-  created() {
-    this.$bus.$on('on-loading', () => {
-      this.isLoading = true;
-    });
-
-    this.$bus.$on('off-loading', () => {
-      this.isLoading = false;
-    });
-
-    this.$bus.$on('error', message => {
-      // You need BalmUI (https://material.balmjs.com/)
-      if (this.$alert) {
-        // For desktop
-        this.$alert(message);
-      } else if (this.$toast) {
-        // For mobile
-        this.$toast(message);
-      } else {
-        alert(message);
-      }
-    });
   }
 };
 </script>

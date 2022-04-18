@@ -1,5 +1,5 @@
 <template>
-  <div class="page--user user-create">
+  <div class="page-user-create">
     <fieldset>
       <legend>Create a new user</legend>
       <p>
@@ -17,9 +17,6 @@
 import { mapActions } from 'vuex';
 
 export default {
-  metaInfo: {
-    titleTemplate: '%s - Create'
-  },
   data() {
     return {
       user: {

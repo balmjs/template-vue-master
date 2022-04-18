@@ -1,10 +1,10 @@
 <template>
-  <div class="page--user user-list">
+  <div class="page-user-list">
     <h2>User list</h2>
     <p>
       <router-link :to="{ name: 'demo.create' }">Add new user</router-link>
     </p>
-    <table v-if="users.length" class="userdata">
+    <table v-if="users.length" class="user-data">
       <thead>
         <tr>
           <th>ID</th>
@@ -20,7 +20,8 @@
             <router-link
               :to="{ name: 'demo.edit', params: { id: user.id } }"
               class="fa fa-edit"
-            >Edit</router-link>
+              >Edit</router-link
+            >
             <i class="fa fa-remove" @click="onDelete(user)">Delete</i>
           </td>
         </tr>
@@ -34,9 +35,6 @@
 import { mapGetters, mapActions } from 'vuex';
 
 export default {
-  metaInfo: {
-    titleTemplate: '%s - List'
-  },
   computed: {
     ...mapGetters({
       users: 'allUsers'

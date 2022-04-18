@@ -1,10 +1,7 @@
-import baseAPI from './base';
-import userAPI from './user';
+import mainServices from './main';
+import modulesServices from './modules';
 
-const API = {
-  base: baseAPI,
-  user: userAPI
+export default {
+  ...mainServices,
+  ...modulesServices
 };
-
-export default API;
-export { baseAPI, userAPI };

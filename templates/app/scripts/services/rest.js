@@ -1,41 +1,31 @@
-import axios from 'axios';
-import bus from '@/store/bus';
+import { useHttp } from '@/plugins/http';
 
 class RestService {
   constructor(url) {
+    this.$http = useHttp();
     this.url = url;
   }
 
   async create(data) {
-    bus.$emit('on-loading');
-
-    return await axios.post(this.url, data);
+    return await this.$http.post(this.url, data);
   }
 
   async delete(id) {
-    bus.$emit('on-loading');
-
-    return await axios.delete(`${this.url}/${id}`);
+    return await this.$http.delete(`${this.url}/${id}`);
   }
 
   async update(id, data) {
-    bus.$emit('on-loading');
-
-    return await axios.put(`${this.url}/${id}`, data);
+    return await this.$http.put(`${this.url}/${id}`, data);
   }
 
   async getAll(params) {
-    bus.$emit('on-loading');
-
-    return await axios.get(this.url, {
+    return await this.$http.get(this.url, {
       params
     });
   }
 
   async getOne(id) {
-    bus.$emit('on-loading');
-
-    return await axios.get(`${this.url}/${id}`);
+    return await this.$http.get(`${this.url}/${id}`);
   }
 }
 

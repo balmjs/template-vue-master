@@ -1,14 +1,5 @@
 const config = require('./config/balmrc');
-const publish = require('./config/balm.publish');
-
-const api = mix => {
-  if (mix.env.isProd) {
-    // For test data
-    mix.copy('./app/data/*', './dist/api');
-  }
-
-  publish(mix);
-};
+const api = require('./config/balm.api');
 
 module.exports = () => {
   return {

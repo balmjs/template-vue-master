@@ -12,9 +12,9 @@
 </template>
 
 <script>
+import logo from '@/assets/logo.png';
 const Hello = () => import('@/views/components/hello');
 const MyMenu = () => import('@/views/components/my-menu');
-import logo from '@/assets/logo.png';
 
 export default {
   name: 'App',

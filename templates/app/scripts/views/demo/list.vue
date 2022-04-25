@@ -20,8 +20,9 @@
             <router-link
               :to="{ name: 'demo.edit', params: { id: user.id } }"
               class="fa fa-edit"
-              >Edit</router-link
             >
+              Edit
+            </router-link>
             <i class="fa fa-remove" @click="onDelete(user)">Delete</i>
           </td>
         </tr>
